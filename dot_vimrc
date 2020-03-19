@@ -1,0 +1,93 @@
+" Settings {{{
+" Start pathogen, the poor man's package manager
+filetype plugin indent on
+set clipboard=unnamedplus
+set nocompatible
+set encoding=utf-8
+set shiftwidth=4
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set tabstop=4
+set softtabstop=4
+set expandtab
+set mouse=a
+set autochdir
+set smartindent
+set foldcolumn=3
+set number
+syntax on
+"set background=dark
+set backspace=indent,eol,start
+set showcmd
+set laststatus=2
+set autoread
+set wildmenu
+set foldmethod=syntax
+" highlight a matching [{()}] when cursor is placed on start/end character
+set showmatch
+" Always show cursor
+set ruler
+" Highlight tailing whitespace
+" See issue: https://github.com/Integralist/ProVim/issues/4
+set list listchars=tab:\ \ ,trail:·
+" Set the status line to something useful
+set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
+colorscheme torte
+" Better splits (new windows appear below and to the right)
+set splitbelow
+set splitright
+" Set bash folding to something sensible (function and if/do/for folding)
+let g:sh_fold_enabled= 3
+" Folding in Vim
+" }}}
+
+" Plugins {{{
+execute pathogen#infect()
+
+"Function to automatically detect the appropriate file type for syntax
+"highlighting
+
+augroup newFileDetection
+    autocmd CursorMovedI * call CheckFileType()
+augroup END
+
+function CheckFileType()
+
+    if exists("b:countcheck") == 0
+        let b:countcheck = 0
+    endif
+    let b:countcheck += 1
+    " Don't start detecting until approx 20 chars
+    if &filetype == "" && b:countcheck > 20 && b:countcheck < 200
+        filetype detect
+        "If we've exceeded the count threshold (200), or a filetype has been
+        "detected, delete the autocmd
+    elseif b:countcheck >= 200 || &filetype != ""
+        autocmd! newFileDetection
+    endif
+endfunction
+
+" Options for Syntastic: Syntastic has numerous options, the defs are
+" unsuitable for new users. Add this to vimrc and return as needed:
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 2
+
+" Rust racer completion
+set hidden
+let g:racer_cmd = "/path/to/racer/bin"
+
+" Markdown preview options
+let g:mkdp_path_to_chrome = "/usr/bin/chromium --app="
+
+" Rainbow colorisation of brackets
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
