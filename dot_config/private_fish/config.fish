@@ -5,4 +5,4 @@ if test -n "$DESKTOP_SESSION"
     set (gnome-keyring-daemon --start | string split "=")
 end
 
-fish_key_vi_bindings
+fish_vi_key_bindings
