@@ -1,8 +1,7 @@
 # Alias definitions:
 source ~/.config/fish/aliases.fish
 
-if test -n "$DESKTOP_SESSION"
-    set (gnome-keyring-daemon --start | string split "=")
-end
-
 fish_vi_key_bindings
+
+# Disable cursor blinking
+set fish_cursor_unknown block
