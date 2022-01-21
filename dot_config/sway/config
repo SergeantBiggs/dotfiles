@@ -257,7 +257,6 @@ assign [app_id="firefox"] $ws4
 assign [class="qutebrowser"] $ws4
 assign [class="Signal"] $ws3
 assign [class="Wire"] $ws3
-assign [class="discord"] $ws3
 assign [app_id="telegramdesktop"] $ws3
 assign [class="Whatsie"] $ws3
 assign [class="corebird"] $ws3
@@ -265,6 +264,7 @@ assign [class="Caprine"] $ws3
 for_window [class="Spotify"] move to workspace $ws9
 assign [app_id="thunderbird"] $ws3
 assign [app_id="org.keepassxc.KeePassXC"] $ws2
+assign [class="discord"] $ws3
 
 # Sway needs explicit float instructions
 for_window [class="Yad" title="yad-calendar"] floating enable
