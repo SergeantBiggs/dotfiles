@@ -303,7 +303,7 @@ output "*" bg /home/biggs/Pictures/astronaut.jpg fill
 
 # Idle management
 
-set $lock 'swaylock --clock --image /home/biggs/Pictures/astronaut.jpg --effect-blur 10x10 --fade-in 1.5 --clock'
+set $lock 'swaylock --clock --image /home/biggs/Pictures/astronaut.jpg --effect-blur 10x10 --fade-in 1.5 --clock --grace 2'
 
 exec swayidle -w \
     timeout 300 $lock \
