@@ -42,7 +42,8 @@ font:
   bold_italic:
     family: Terminus
     style: Bold Italic
-  size: 11
+  size: 13
 cursor:
   shape: block
   blinking: never
+background_opacity: 0.7
