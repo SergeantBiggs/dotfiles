@@ -265,7 +265,7 @@ mode "$mode_launcher" {
     bindsym s exec signal-desktop
         bindsym w exec wire-desktop
         bindsym s exec signal-desktop
-        bindsym f exec firefox-developer-edition
+        bindsym f exec firefox
         bindsym t exec thunderbird
         bindsym k exec keepass
         bindsym p exec spotify
@@ -285,7 +285,7 @@ bindsym $mod+button3 floating toggle
 # Window assignment:
 # You can get the window class with "xprop"
 assign [class="KeePass"] $ws2
-assign [class="firefoxdeveloperedition"] $ws4
+assign [class="firefox"] $ws4
 assign [class="qutebrowser"] $ws4
 assign [class="Signal"] $ws3
 assign [class="Wire"] $ws3
