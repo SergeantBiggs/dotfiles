@@ -239,7 +239,7 @@ exec udiskie --no-automount --tray
 exec dunst
 exec gnome-keyring-daemon --start
 # Make sure nextcloud starts after waybar, otherwise it's not in the tray
-exec 'sleep 20 && nextcloud --background'
+exec 'sleep 30 && nextcloud --background'
 
 # Start xdg autostart programs:
 exec dex -ae i3
