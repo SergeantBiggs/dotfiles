@@ -86,9 +86,6 @@ let g:syntastic_auto_jump = 2
 set hidden
 let g:racer_cmd = "/path/to/racer/bin"
 
-" Markdown preview options
-let g:mkdp_path_to_chrome = "/usr/bin/chromium --app="
-
 " Rainbow colorisation of brackets
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
