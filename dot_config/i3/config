@@ -95,8 +95,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # lock the screen
-bindsym $mod+Shift+m exec i3lock -i ~/Pictures/Wallpapers/consent-web-1920.png --ignore-empty-password && systemctl suspend
-bindsym $mod+m exec i3lock -i ~/Pictures/Wallpapers/consent-web-1920.png --ignore-empty-password
+bindsym $mod+Shift+m exec systemctl suspend
+bindsym $mod+m exec betterlockscreen --lock blur
 
 # Emoji picker
 bindsym $mod+t exec splatmoji type
@@ -254,9 +254,9 @@ for_window [title="MOTD_startup"] floating enable
 for_window [title="MOTD_startup"] resize set 730 900
 for_window [title="MOTD_startup"] move absolute position center
 # Xss-lock
-exec xss-lock -- i3lock
+exec xss-lock -- betterlockscreen --lock blur
 # Set background using feh
-exec feh --bg-fill "/home/biggs/Pictures/Wallpapers/Final Album/ghost_shell.jpg"
+exec feh --bg-fill "/home/biggs/Pictures/ghost_shell.jpg"
 
 
 # launcher mode to launch often-used programs:
